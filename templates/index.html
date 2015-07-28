@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="static/js/jquery-2.1.4.min.js"></script>
+
+    <title>My jQuery Ajax Test</title>
+</head>
+<body>
+    <h1>jQuery Ajax Test</h1>
+
+    <a href="#" id="load">Show the file</a>
+    <div id="contents"></div>
+
+    <script type="text/javascript">
+        $('#load').on('click', function() {
+            var contents = $('#contents');
+            $.ajax({
+                url: 'static/dummy_file.txt',
+                cache: false,
+                success: function(data) {
+                    contents.text(data);
+                },
+                error: function(){
+                    console.log("It didn't work");
+                }
+            });
+        });
+    </script>
+
+    <a href="#" id="toogle_me">Toggle me</a>
+    <div id="show_toog"></div>
+
+    <script type="text/javascript">
+        $('#toogle_me').on('click', function() {
+            $.ajax({
+                url: 'static/dummy_file.txt',
+                success: function(data) {
+                    $('#show_toog').toggle().text(data);
+                },
+                error: function(){
+                    $('#show_toog').text("Your file isnt here").toggle();
+                }
+            })
+        })
+    </script>
+
+    <h3>Refresh Example</h3>
+    <div id="refresh"></div>
+    <script type="text/javascript">
+        setInterval(function() {
+            $.ajax({
+                url: 'static/dummy_file2.txt',
+                cache: false,
+                success: function(f2) {
+                    $('#refresh').text(f2);
+                },
+                error: function(){
+                    $('#refresh').text("Cant find your file");
+                }
+            });
+        }, 1000);
+    </script>
+
+</body>
+</html>
