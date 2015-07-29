@@ -1,4 +1,10 @@
 @charset 'UTF-8';
 
 body {
+    background: #111;
+    color: #888;
+}
+
+a {
+    color: #d11;
 }

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="static/js/jquery-2.1.4.min.js"></script>
+    <link href="/static/css/style.css" rel="stylesheet">
+
+    <title>Table of Contents</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        $("document").ready(function() {
+            var chapter = 1;
+            $("h2").each(function() {
+                $("#toc").append("<li><a href='#toc" + chapter + "'>" + $(this).text() + "</a></li>");
+                $(this).attr("id", "toc" + chapter);
+                chapter++;
+            });
+        });
+    </script>
+
+    <h1>Table of Contents</h1>
+    <p>
+        <ol type="a" id="toc">
+        </ol>
+    </p>
+    <h2>Chapter 1</h2>
+    <p>Lorem Ipsum</p>
+
+    <h2>Chapter 2</h2>
+    <p>Lorem Ipsum</p>
+
+    <h2>Chapter 3</h2>
+    <p>Lorem Ipsum</p>
+
+    <h2>Chapter 4</h2>
+    <p>Lorem Ipsum</p>
+
+</body>
+</html>

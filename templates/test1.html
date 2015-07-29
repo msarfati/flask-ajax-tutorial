@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="static/js/jquery-2.1.4.min.js"></script>
+    <link href="/static/css/style.css" rel="stylesheet">
+
+    <title>My jQuery Ajax Test</title>
+</head>
+<body>
+    <script type="text/javascript">
+        $("document").ready(function () {
+            // $("p#par2").css("border", "1px solid #fff"); 
+            // $("li").css("border", "1px solid #f0f"); 
+            // $("ol li.c").css("border", "2px solid #f0f")
+            // $("ul li:not(#e2)").css("border", "2px solid #f0f")
+            // $(":parent(.b)").css("border", "2px solid #f0f")
+            // alert("Yep!" + $("p").length);
+            $("li:contains(Apples)").html("<ol><li id='ya'>Ok</li></ol>");
+            $("#ya").html("<input type='radio' id='omg' checked=unchecked/>");
+            $("li:last").text("LAST ONE!");
+            $("li.a,li.b").append(" {{ saying[0] }}");
+
+            // $(":contains(s)").css("border", "3px solid blue");
+
+            var border = 1;
+            $(":contains(s)").each(function () {
+                $(this).css("border", border + "px solid red");
+                border++;
+            });
+            alert(border + " instances.");
+        });
+    </script>
+    <h1>jQuery Ajax Test2</h1>
+
+    <p id="my-par"></p>
+
+    <ul id="my-list">
+        <li id="e1" class="a">Apples</li>
+        <li id="e2" class="a">Oranges</li>
+        <li id="e3" class="b">Pears</li>
+        <li id="e4" class="b">Plums</li>
+    </ul>
+    <ol>
+        <li class="b">Car</li>
+        <li class="b">Truck</li>
+        <li class="c">Jeep</li>
+        <li class="c">Van</li>
+    </ol>
+
+    <p id="par2">My paragraph here</p>
+    <p>PAragraph two</p>
+    <p class="a">Third paragraph</p>
+
+<!-- FORM -->
+<script type="text/javascript">
+    $("document").ready( function() {
+        // $("form, h1:contains(Form)").css("border", "2px solid red");
+        $("form :input").before("INPUT: ");
+    });
+</script>
+    <h1>Example Form Document</h1>
+<form action="" method="post">
+
+<table class="style1">
+<tbody>
+    <tr>
+        <td class="style2">
+            First Name</td>
+        <td>
+            <input id="FirstName" type="text" /></td>
+    </tr>
+    <tr>
+        <td class="style2">
+            Last Name</td>
+        <td>
+            <input id="LastName" type="text" /></td>
+    </tr>
+    <tr>
+        <td class="style2">
+            Disabled Text Field</td>
+        <td>
+            <input id="Text1" type="text" disabled="disabled"/></td>
+    </tr>
+    <tr>
+        <td class="style2">
+            Gender</td>
+        <td>
+            <input id="Male" type="radio" checked="checked"/>M<input id="Female" type="radio" />F</td>
+    </tr>
+    <tr>
+        <td class="style2">
+            What products are you interested in?</td>
+        <td>
+            <input id="Checkbox1" type="checkbox" checked="checked"/><label for="Checkbox1">Widgets</label><br />
+            <input id="Checkbox2" type="checkbox" /><label for="Checkbox1">Hibbity Jibbities</label><br />
+            <input id="Checkbox3" type="checkbox" checked="checked"/><label for="Checkbox1">SplashBangers</label><br />
+            <input id="Checkbox4" type="checkbox" /><label for="Checkbox1">Whatzits</label></td>
+    </tr>
+    <tr>
+        <td class="style2">
+            Comments:</td>
+        <td>
+            <textarea id="Comments" cols="40" name="S1" rows="5"></textarea></td>
+    </tr>
+    <tr>
+        <td class="style2">
+            Optional life story file</td>
+        <td>
+            <input id="File1" type="file" /></td>
+    </tr>
+    <tr>
+        <td class="style2">
+            &nbsp;</td>
+        <td>
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style2">
+            &nbsp;</td>
+        <td>
+            <input id="Submit1" type="submit" value="submit" /> <input id="Reset1" 
+                type="reset" value="reset" /></td>
+    </tr>
+</tbody></table>
+
+</form>
+
+</body>
+</html>
